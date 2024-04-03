@@ -55,3 +55,8 @@ O sistema deve calcular o total de calorias com base nos ingrediente
 - HTML
 
 ## Integrantes
+ 
+ - Gabriel Eduardo Brambilla
+ - João Vitor Zerwes Maciel
+ - Nelson Javier Dos Santos Baez
+ 
