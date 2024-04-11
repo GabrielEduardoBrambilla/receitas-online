@@ -1,6 +1,8 @@
 import React from 'react'
 import { Container } from './styles'
 
-export function Modal() {
-  return <Container>Home</Container>
+export function Home() {
+  return <Container>
+    <h2>AQUIERAS</h2>
+  </Container>
 }
