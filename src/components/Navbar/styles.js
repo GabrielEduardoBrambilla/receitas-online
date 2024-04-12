@@ -31,6 +31,7 @@ export const SearchForm = styled.form`
   > input {
     background-color: #7f7777;
     border: none;
+    color: white;
 
     &::placeholder {
       color: white;
