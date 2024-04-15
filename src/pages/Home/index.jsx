@@ -18,7 +18,10 @@ export function Home() {
         <RecipeCard />
         <RecipeCard />
         <RecipeCard />
+        <RecipeCard />
       </CardWrapper>
     </main>
+
+    <footer></footer>
   </Container>
 }
