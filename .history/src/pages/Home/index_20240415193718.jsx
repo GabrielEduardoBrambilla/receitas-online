@@ -2,7 +2,8 @@ import React from 'react'
 import { Container, TitleWrapper, CardWrapper } from './styles'
 import { Navbar } from '../../components/Navbar'
 import { RecipeCard } from '../../components/RecipeCard'
-import { RecipeRegisterModal } from '../../components/RecipeRegisterModal'
+import * as Dialog from '@radix-ui/react-dialog';
+
 
 export function Home() {
   return <Container>
@@ -10,7 +11,20 @@ export function Home() {
     <main>
       <TitleWrapper>
         <h2>Receitas</h2>
-        <RecipeRegisterModal buttonText="Cadastrar - Receita"/>
+        <button>Cadastrar - Receita</button>
+        <Dialog.Root>
+          <Dialog.Trigger asChild>
+            
+          </Dialog.Trigger>
+          <Dialog.Portal>
+            <Dialog.Overlay />
+            <Dialog.Content>
+              <Dialog.Title />
+              <Dialog.Description />
+              <Dialog.Close />
+            </Dialog.Content>
+          </Dialog.Portal>
+        </Dialog.Root>
       </TitleWrapper>
 
       <CardWrapper>

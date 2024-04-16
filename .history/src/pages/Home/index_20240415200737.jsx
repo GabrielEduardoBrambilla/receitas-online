@@ -2,7 +2,9 @@ import React from 'react'
 import { Container, TitleWrapper, CardWrapper } from './styles'
 import { Navbar } from '../../components/Navbar'
 import { RecipeCard } from '../../components/RecipeCard'
+import { Modal } from '../../components/Modal'
 import { RecipeRegisterModal } from '../../components/RecipeRegisterModal'
+
 
 export function Home() {
   return <Container>
@@ -10,7 +12,11 @@ export function Home() {
     <main>
       <TitleWrapper>
         <h2>Receitas</h2>
-        <RecipeRegisterModal buttonText="Cadastrar - Receita"/>
+        <RecipeRegisterModal>
+          <Modal.Button>
+            <button>Cadastrar - Receita</button>
+          </Modal.Button>
+        </RecipeRegisterModal>
       </TitleWrapper>
 
       <CardWrapper>

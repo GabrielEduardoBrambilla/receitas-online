@@ -10,6 +10,7 @@ export function Home() {
     <main>
       <TitleWrapper>
         <h2>Receitas</h2>
+        <button></button>
         <RecipeRegisterModal buttonText="Cadastrar - Receita"/>
       </TitleWrapper>
 

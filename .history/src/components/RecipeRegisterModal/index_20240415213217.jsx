@@ -8,7 +8,7 @@ export function RecipeRegisterModal({buttonText}) {
   return <DefaultModal buttonText={buttonText}> 
     <form>
       <InputForm name="recipeName" displayName="Receita Nome"/>
-      <TextAreaForm name="desc" displayName="Desc"/>
+      <TextAreaForm name="recipeName" displayName="Desc"/>
       <TextAreaForm name="howto" displayName="Modo de preparo"/>
     </form>
   </DefaultModal>
