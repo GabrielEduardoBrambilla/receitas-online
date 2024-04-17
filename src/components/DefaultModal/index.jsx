@@ -1,5 +1,5 @@
 import React from 'react'
-import { Container } from './styles'
+import { Container, NewModal } from './styles'
 import Modal from 'react-modal'
 
 export function DefaultModal({ buttonText, children }) {
@@ -15,12 +15,12 @@ export function DefaultModal({ buttonText, children }) {
 
   return <Container htmlFor='open'>
     <button id='open' onClick={openModal}>{buttonText}</button>
-    <Modal
+    <NewModal
       isOpen={modalIsOpen}
       onRequestClose={closeModal}
     >
       {children}
-      <button onClick={closeModal}>close</button>
-    </Modal>
+      <button onClick={closeModal}>X</button>
+    </NewModal>
   </Container>
 }

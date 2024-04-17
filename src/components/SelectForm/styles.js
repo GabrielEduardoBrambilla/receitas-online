@@ -1,6 +1,8 @@
 import styled from 'styled-components'
-export const Container = styled.div``
-export const Input = styled.input`
+export const Container = styled.div`
+  width: 100%;
+`
+export const Select = styled.select`
   padding: 3px;
   font-size: 14px;
   font-weight: 600;
@@ -9,8 +11,8 @@ export const Input = styled.input`
   border-radius: 8px;
 `
 export const Label = styled.label`
-  margin-bottom: 8px;
   color: black;
+  margin-bottom: 8px;
   font-weight: bold;
   display: block;
   margin-top: 1rem;
