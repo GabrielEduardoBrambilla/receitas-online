@@ -1,13 +1,11 @@
-import { useState } from 'react'
-import { Home } from './pages/Home'
 import { GlobalStyle } from './styles/global'
-import { RecipeModal } from './components/RecipeModal'
+import { AppRoutes } from './routes'
 
 export function App() {
 
   return (
     <>
-      <RecipeModal />
+      <AppRoutes />
       <GlobalStyle />
     </>
   )
