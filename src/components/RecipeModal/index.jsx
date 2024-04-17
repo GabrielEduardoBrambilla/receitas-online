@@ -9,15 +9,14 @@ export function RecipeModal() {
     <Container>
   
    
-  <body>
   <header>Pão de Queijo Fit Facíl</header>
 
   
 
   <article>
-        <div class="cafedmn">
+        <div className="cafedmn">
 
-          <ul class='bloco2'>
+          <ul className='bloco2'>
 
           <li id='cafe'>cafe da manha</li> 
           <li id='kcal'>500 kcal</li>
@@ -27,8 +26,8 @@ export function RecipeModal() {
         </div>
 
 
-    <section class="bloco3">
-        <ul class='bloco'>
+    <section className="bloco3">
+        <ul className='bloco'>
         
             <li>polvilho doce</li>
             <li>queijo parmesãoralado</li>
@@ -42,7 +41,7 @@ export function RecipeModal() {
     </section>
   </article>
 
-    <div class='disc'>
+    <div className='disc'>
       <h2>Descrição </h2>
         <p>receita fit de pão de queijo pra quem quer emagrecer sem tirar a alegria de viver da dieta
           Você pode adicionar 1 colher de sobremesa de sementes de chia ou de farinha de linhaça, para deixar o pão de queijo ainda mais nutritivo.</p>
@@ -53,7 +52,7 @@ export function RecipeModal() {
 
         </div>
 
-        <div class='prep'>
+        <div className='prep'>
       <h2>Modo de Preparo</h2>
 
       <ul>
@@ -66,7 +65,6 @@ export function RecipeModal() {
       </ul>
       </div>
 
-      </body>
     </Container>
   </DefaultModal>
 }
