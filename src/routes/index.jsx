@@ -1,19 +1,15 @@
 import React from 'react'
-import { Route, Routes } from 'express'
+import { Routes, Route } from 'react-router-dom'
 import { Home } from '../pages/Home'
-import { RecipeModal } from '../components/RecipeModal'
 import { Login } from '../pages/Login'
-import { BrowserRouter } from 'react-router-dom'
+import { RecipeModal } from '../pages/RecipeModal'
 
-export function AppRoutes() {
+export default function Router() {
   return (
-    <BrowserRouter>
-
-      <Routes>
-        <Route path="/recipe" element={<RecipeModal />} />
-        <Route path="/home" element={<Home />} />
-        <Route path="/" element={<Login />} />
-      </Routes>
-    </BrowserRouter>
+    <Routes>
+      <Route path="/" element={<Home />} />
+      <Route path="/Login" element={<Login />} />
+      <Route path="/modal" element={<RecipeModal />} />
+    </Routes>
   )
 }

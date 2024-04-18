@@ -1,11 +1,8 @@
 import React from 'react'
 import { Container } from './styles'
-import { DefaultModal } from '../DefaultModal'
-
 
 export function RecipeModal({ forceOpen, buttonText }) {
-  return
-  <Container>
+  return <Container>
     <header>Pão de Queijo Fit Facíl</header>
     <article>
       <div className="cafedmn">

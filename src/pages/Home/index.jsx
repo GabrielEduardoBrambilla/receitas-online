@@ -7,11 +7,18 @@ import { RecipeModal } from '../../components/RecipeModal'
 import { Navigate, useNavigate } from 'react-router-dom'
 
 export function Home() {
-  const [modal, setModal] = useState(false)
-  function handleModalOpen() {
+  const [modal1, setModal1] = useState(false)
+  const [modal2, setModal2] = useState(false)
 
-    setModal(true)
+  function handleToggleModal(num) {
+    if (num == 1) {
+      setModal1(!modal1)
+    }
+    if (num == 2) {
+      setModal2(!modal2)
+    }
   }
+
 
   return <Container>
     <Navbar />
@@ -22,13 +29,16 @@ export function Home() {
       </TitleWrapper>
 
       <CardWrapper>
-        <RecipeCard onClick={handleModalOpen} />
         <RecipeCard />
         <RecipeCard />
         <RecipeCard />
         <RecipeCard />
         <RecipeCard />
-        <RecipeModal buttonText="Joao" />
+        <RecipeCard />
+        <RecipeModal onClick={() => {
+          handleToggleModal(2)
+        }}
+          buttonText="Joao" />
       </CardWrapper>
     </main>
     <footer></footer>

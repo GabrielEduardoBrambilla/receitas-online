@@ -1,5 +1,5 @@
 import React from 'react'
-import { Container, InputWrapper, Row, SimpleInput, TagWrapper } from './styles'
+import { InputWrapper, Row, SimpleInput, TagWrapper } from './styles'
 import { DefaultModal } from '../DefaultModal'
 import { InputForm } from '../InputForm'
 import { TextAreaForm } from '../TextAreaForm'
