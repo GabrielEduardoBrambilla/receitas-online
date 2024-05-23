@@ -28,7 +28,9 @@ export function Navbar() {
       </SearchForm>
 
 
-      <UserWrapper>
+      <UserWrapper onClick={() => {
+        navigate('/Login')
+      }}>
         <p>Username</p>
         <UserCircle size={40} weight="fill" />
 
