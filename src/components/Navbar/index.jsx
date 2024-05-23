@@ -5,12 +5,17 @@ import {
 } from './styles'
 import Logo from '../../assets/Logo.svg'
 import { UserCircle, MagnifyingGlass, Heart } from 'phosphor-react'
+import { useNavigate } from 'react-router-dom'
 
 export function Navbar() {
+  const navigate = useNavigate()
+
   return (
     <Container>
 
-      <LogoContainer>
+      <LogoContainer onClick={() => {
+        navigate('/')
+      }}>
         <img src={Logo} alt="" />
       </LogoContainer>
 

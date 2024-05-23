@@ -10,6 +10,7 @@ import { DefaultModal } from '../../components/DefaultModal'
 export function Home() {
   const [modal1, setModal1] = useState(false)
   const [modal2, setModal2] = useState(false)
+  const navigate = useNavigate()
 
   function handleToggleModal(num) {
     if (num == 1) {
@@ -32,20 +33,24 @@ export function Home() {
       </TitleWrapper>
 
       <CardWrapper>
-        <RecipeCard />
-        <RecipeCard />
-        <RecipeCard />
-        <RecipeCard />
-        <RecipeCard />
-        <RecipeCard />
-
-        <DefaultModal  buttonText="Cadastrar - Receita" >
-          <RecipeModal />
-        </DefaultModal>
-        {/* <RecipeModal onClick={() => {
-          handleToggleModal(2)
-        }}
-          buttonText="Joao" /> */}
+        <RecipeCard onClick={() => {
+          navigate('/modal')
+        }} />
+        <RecipeCard onClick={() => {
+          navigate('/modal')
+        }} />
+        <RecipeCard onClick={() => {
+          navigate('/modal')
+        }} />
+        <RecipeCard onClick={() => {
+          navigate('/modal')
+        }} />
+        <RecipeCard onClick={() => {
+          navigate('/modal')
+        }} />
+        <RecipeCard onClick={() => {
+          navigate('/modal')
+        }} />
       </CardWrapper>
     </main>
     <footer></footer>

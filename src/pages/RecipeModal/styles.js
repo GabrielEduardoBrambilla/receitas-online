@@ -1,8 +1,6 @@
 import styled from 'styled-components'
 
-export const Container = styled.div`
-  width: 1114px;
-  height: 753px;
+export const ContainerModal = styled.div`
   top: 122px;
   left: 165px;
   gap: 0px;
