@@ -5,6 +5,7 @@ import { RecipeCard } from '../../components/RecipeCard'
 import { RecipeRegisterModal } from '../../components/RecipeRegisterModal'
 import { RecipeModal } from '../../components/RecipeModal'
 import { Navigate, useNavigate } from 'react-router-dom'
+import { DefaultModal } from '../../components/DefaultModal'
 
 export function Home() {
   const [modal1, setModal1] = useState(false)
@@ -25,7 +26,9 @@ export function Home() {
     <main>
       <TitleWrapper>
         <h2>Receitas</h2>
-        <RecipeRegisterModal buttonText="Cadastrar - Receita" />
+        <DefaultModal buttonText="Cadastrar - Receita" >
+          <RecipeRegisterModal />
+        </DefaultModal>
       </TitleWrapper>
 
       <CardWrapper>
@@ -35,10 +38,14 @@ export function Home() {
         <RecipeCard />
         <RecipeCard />
         <RecipeCard />
-        <RecipeModal onClick={() => {
+
+        <DefaultModal  buttonText="Cadastrar - Receita" >
+          <RecipeModal />
+        </DefaultModal>
+        {/* <RecipeModal onClick={() => {
           handleToggleModal(2)
         }}
-          buttonText="Joao" />
+          buttonText="Joao" /> */}
       </CardWrapper>
     </main>
     <footer></footer>
