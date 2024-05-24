@@ -1,53 +1,63 @@
-import React, { useState } from 'react'
-import { Container, TitleWrapper, CardWrapper } from './styles'
-import { Navbar } from '../../components/Navbar'
-import { RecipeCard } from '../../components/RecipeCard'
-import { RecipeRegisterModal } from '../../components/RecipeRegisterModal'
-import { RecipeModal } from '../../components/RecipeModal'
-import { Navigate, useNavigate } from 'react-router-dom'
-import { DefaultModal } from '../../components/DefaultModal'
+import React, { useState } from 'react';
+import { Container, TitleWrapper, CardWrapper } from './styles';
+import { Navbar } from '../../components/Navbar';
+import { RecipeCard } from '../../components/RecipeCard';
+import { RecipeRegisterModal } from '../../components/RecipeRegisterModal';
+import { RecipeModal } from '../../components/RecipeModal';
+import { DefaultModal } from '../../components/DefaultModal';
 
 export function Home() {
-  const [modal1, setModal1] = useState(false)
-  const [modal2, setModal2] = useState(false)
+  const [modal1, setModal1] = useState(false);
+  const [cardModals, setCardModals] = useState(Array(6).fill(false));
 
   function handleToggleModal(num) {
-    if (num == 1) {
-      setModal1(!modal1)
-    }
-    if (num == 2) {
-      setModal2(!modal2)
+    if (num === 1) {
+      setModal1(!modal1);
     }
   }
 
+  function handleCardModalToggle(index) {
+    const newCardModals = [...cardModals];
+    newCardModals[index] = !newCardModals[index];
+    setCardModals(newCardModals);
+  }
 
-  return <Container>
-    <Navbar />
-    <main>
-      <TitleWrapper>
-        <h2>Receitas</h2>
-        <DefaultModal buttonText="Cadastrar - Receita" >
-          <RecipeRegisterModal />
-        </DefaultModal>
-      </TitleWrapper>
+  return (
+    <Container>
+      <Navbar />
+      <main>
+        <TitleWrapper>
+          <h2>Receitas</h2>
+          <DefaultModal 
+            buttonText="Cadastrar - Receita" 
+            isOpen={modal1} 
+            onRequestClose={() => handleToggleModal(1)} 
+            handleClick={() => handleToggleModal(1)}
+          >
+            <RecipeRegisterModal />
+          </DefaultModal>
+        </TitleWrapper>
 
-      <CardWrapper>
-        <RecipeCard />
-        <RecipeCard />
-        <RecipeCard />
-        <RecipeCard />
-        <RecipeCard />
-        <RecipeCard />
-
-        <DefaultModal  buttonText="Cadastrar - Receita" >
-          <RecipeModal />
-        </DefaultModal>
-        {/* <RecipeModal onClick={() => {
-          handleToggleModal(2)
-        }}
-          buttonText="Joao" /> */}
-      </CardWrapper>
-    </main>
-    <footer></footer>
-  </Container>
+        <CardWrapper>
+          {Array.from({ length: 6 }, (_, index) => (
+            <React.Fragment key={index}>
+              <div 
+                onClick={() => handleCardModalToggle(index)} 
+                style={{ cursor: 'pointer' }}
+              >
+                <RecipeCard />
+              </div>
+              <DefaultModal
+                isOpen={cardModals[index]}
+                onRequestClose={() => handleCardModalToggle(index)}
+              >
+                <RecipeModal />
+              </DefaultModal>
+            </React.Fragment>
+          ))}
+        </CardWrapper>
+      </main>
+      <footer></footer>
+    </Container>
+  );
 }

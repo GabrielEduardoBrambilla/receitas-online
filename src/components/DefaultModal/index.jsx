@@ -1,28 +1,20 @@
-import React from 'react'
-import { Container, NewModal } from './styles'
-import Modal from 'react-modal'
+import React from 'react';
+import { Container, NewModal } from './styles';
+import Modal from 'react-modal';
 
-export function DefaultModal({ buttonText, children, forceOpen }) {
-  const [modalIsOpen, setIsOpen] = React.useState(false);
-
-  function openModal() {
-    setIsOpen(true);
-  }
-
-  forceOpen ? openModal() : undefined;
-
-  function closeModal() {
-    setIsOpen(false);
-  }
-
-  return <Container htmlFor='open'>
-    <button id='open' onClick={openModal}>{buttonText}</button>
-    <NewModal
-      isOpen={modalIsOpen}
-      onRequestClose={closeModal}
-    >
-      {children}
-      <button onClick={closeModal}>X</button>
-    </NewModal>
-  </Container>
+export function DefaultModal({ buttonText, children, isOpen, onRequestClose, handleClick }) {
+  return (
+    <Container>
+      {buttonText && handleClick && (
+        <button onClick={handleClick}>{buttonText}</button>
+      )}
+      <NewModal
+        isOpen={isOpen}
+        onRequestClose={onRequestClose}
+      >
+        {children}
+        <button onClick={onRequestClose}>X</button>
+      </NewModal>
+    </Container>
+  );
 }
