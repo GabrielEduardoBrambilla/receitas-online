@@ -12,18 +12,10 @@ export function Home() {
   const [modal2, setModal2] = useState(false)
   const navigate = useNavigate()
 
-  function handleToggleModal(num) {
-    if (num == 1) {
-      setModal1(!modal1)
-    }
-    if (num == 2) {
-      setModal2(!modal2)
-    }
-  }
-
+  const nome = localStorage.getItem('@ReceitaOnline:nome') != undefined ? localStorage.getItem('@ReceitaOnline:nome') : '';
 
   return <Container>
-    <Navbar />
+    <Navbar nome={nome} />
     <main>
       <TitleWrapper>
         <h2>Receitas</h2>

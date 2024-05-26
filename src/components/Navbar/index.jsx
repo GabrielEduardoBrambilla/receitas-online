@@ -7,9 +7,9 @@ import Logo from '../../assets/Logo.svg'
 import { UserCircle, MagnifyingGlass, Heart } from 'phosphor-react'
 import { useNavigate } from 'react-router-dom'
 
-export function Navbar() {
+export function Navbar(nome) {
   const navigate = useNavigate()
-
+  console.log(nome)
   return (
     <Container>
 
@@ -31,7 +31,7 @@ export function Navbar() {
       <UserWrapper onClick={() => {
         navigate('/Login')
       }}>
-        <p>Username</p>
+        <p>{nome.nome}</p>
         <UserCircle size={40} weight="fill" />
 
       </UserWrapper>
