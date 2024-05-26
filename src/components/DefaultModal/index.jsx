@@ -25,7 +25,7 @@ export function DefaultModal({ buttonText, children, buttonChild, forceOpen }) {
       isOpen={modalIsOpen}
       onRequestClose={closeModal}
     >
-      {true && children}
+      {children}
       <button onClick={closeModal}>X</button>
     </NewModal>
   </Container>

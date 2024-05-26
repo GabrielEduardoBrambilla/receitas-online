@@ -43,3 +43,10 @@ export const Row = styled.div`
   width:100%;
   gap:12px;
 `
+
+export const SaveButton = styled.button`
+  border: 2px solid black;
+  background-color: lightgreen;
+  border-radius: 9px;
+  padding: 4px 10px;
+`

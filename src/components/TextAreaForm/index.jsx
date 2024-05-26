@@ -4,6 +4,6 @@ import { Container, TextArea, Label } from './styles'
 export function TextAreaForm({name, displayName}) {
   return <Container>
     <Label htmlFor={name}>{displayName}</Label>
-    <TextArea name={name} />
+    <TextArea name={name} id={name} />
   </Container>
 }
