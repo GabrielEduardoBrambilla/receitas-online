@@ -103,8 +103,6 @@ export function Home() {
     setRecipes(recipesData ?? defaultItems);
   }, []);
 
-
-
   return <Container>
     <Navbar nome={nome} />
     <main>
@@ -119,7 +117,13 @@ export function Home() {
       <CardWrapper>
         {recipes && recipes.map(recipe => 
           <DefaultModal key={recipe.id} buttonChild={<RecipeCard title={recipe.name} desc={recipe.desc} />} buttonText="Receita Modal" >
-            <RecipeModal />
+            <RecipeModal 
+              title={recipe.name}
+              desc={recipe.desc}
+              howto={recipe.howto}
+              categories={recipe.categories}
+              ingredients={recipe.ingredients}  
+            />
           </DefaultModal>
         )}
         {/* <DefaultModal buttonChild={<RecipeCard />} buttonText="Receita Modal" >

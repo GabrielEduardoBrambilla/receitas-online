@@ -5,6 +5,9 @@ export const Container = styled.div`
   border-radius: 9px;
   width: 100%;
   max-width: 555px;
+  width: 555px;
+  height: 90px;
+  overflow: hidden;
 
   > h3 {
     font-size: 22px;
