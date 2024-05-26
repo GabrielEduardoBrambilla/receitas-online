@@ -30,9 +30,13 @@ export function Home() {
         <DefaultModal buttonText="Cadastrar - Receita" >
           <RecipeRegisterModal />
         </DefaultModal>
+
       </TitleWrapper>
 
       <CardWrapper>
+        <DefaultModal buttonChild={<RecipeCard />} buttonText="Receita Modal" >
+          <RecipeModal />
+        </DefaultModal>
         <RecipeCard onClick={() => {
           navigate('/modal')
         }} />
