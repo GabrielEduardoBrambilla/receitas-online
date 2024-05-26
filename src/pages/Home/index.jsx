@@ -12,7 +12,7 @@ export function Home() {
   const [modal2, setModal2] = useState(false)
   const navigate = useNavigate()
 
-  const nome = localStorage.getItem('@ReceitaOnline:nome') != undefined ? localStorage.getItem('@ReceitaOnline:nome') : '';
+  const nome = localStorage.getItem('@ReceitaOnline:nome') != undefined ? localStorage.getItem('@ReceitaOnline:nome') : 'Nelson-Son';
 
   return <Container>
     <Navbar nome={nome} />
