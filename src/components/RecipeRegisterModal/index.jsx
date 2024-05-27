@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { InputWrapper, Row, SaveButton, SimpleInput, TagWrapper } from './styles'
 import { DefaultModal } from '../DefaultModal'
 import { InputForm } from '../InputForm'
@@ -7,6 +7,7 @@ import { SelectForm } from '../SelectForm'
 import { v4 as uuidv4 } from 'uuid';
 
 export function RecipeRegisterModal({ buttonText }) {
+  const [ingredients, setIngredients] = useState([]);
 
   const submitHandler = e => {
     e.preventDefault();
@@ -24,6 +25,23 @@ export function RecipeRegisterModal({ buttonText }) {
     location.reload()
   }
 
+  const saveIngredient = () => {
+    const savedData = JSON.parse(localStorage.getItem('@ReceitaOnline:ingredientsData')) ?? [];
+    const postData = {
+      id: uuidv4(),
+      name:document.getElementById('ingredientName').value,
+      calories:document.getElementById('ingredientCalorie').value,
+    }
+    savedData.push(postData);
+    localStorage.setItem("@ReceitaOnline:ingredientsData", JSON.stringify(savedData));
+    setIngredients(savedData)
+  }
+
+  useEffect(() => {
+    const ingredientsData = JSON.parse(localStorage.getItem('@ReceitaOnline:ingredientsData'));
+    setIngredients(ingredientsData ?? []);
+  }, []);
+
   return <form onSubmit={submitHandler}>
     <InputForm name="recipeName" displayName="Receita Nome" />
     <Row>
@@ -39,18 +57,12 @@ export function RecipeRegisterModal({ buttonText }) {
     </Row>
     <Row>
       <SelectForm name="ingredients" displayName="Ingredientes"
-        options={[{
-          value: 'feijao',
-          name: "Feijão"
-        }, {
-          value: 'arroiz',
-          name: "Arroz"
-        }]}
+        options={ingredients}
       />
       <InputWrapper>
-        <SimpleInput id="IngredientName" type="text" name='IngredientName' placeholder="Nome" />
-        <SimpleInput id="IngredientCalorie" type="text" name='IngredientCalorie' placeholder="Calorias" />
-        <button type="button">Registrar Ingredientes</button>
+        <SimpleInput id="ingredientName" type="text" name='IngredientName' placeholder="Nome" />
+        <SimpleInput id="ingredientCalorie" type="text" name='IngredientCalorie' placeholder="Calorias" />
+        <button type="button" onClick={saveIngredient}>Registrar Ingredientes</button>
       </InputWrapper>
       <TagWrapper>
         <p> Feijão</p> <span>X</span>
