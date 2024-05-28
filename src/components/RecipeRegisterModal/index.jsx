@@ -27,14 +27,22 @@ export function RecipeRegisterModal({ buttonText }) {
 
   const saveIngredient = () => {
     const savedData = JSON.parse(localStorage.getItem('@ReceitaOnline:ingredientsData')) ?? [];
+    
+    const nameElement = document.getElementById('ingredientName');
+    const caloriesElement = document.getElementById('ingredientCalorie');
+    
     const postData = {
       id: uuidv4(),
-      name:document.getElementById('ingredientName').value,
-      calories:document.getElementById('ingredientCalorie').value,
+      name:nameElement.value,
+      calories:caloriesElement.value,
     }
+
     savedData.push(postData);
     localStorage.setItem("@ReceitaOnline:ingredientsData", JSON.stringify(savedData));
     setIngredients(savedData)
+
+    nameElement.value = '';
+    caloriesElement.value = '';
   }
 
   useEffect(() => {
