@@ -6,13 +6,28 @@ export const Container = styled.div`
   min-height: 100vh;
   justify-content: space-evenly;
   align-items: center;
+  @media (max-width: 975px) {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
 `
-export const LogoContainer = styled.div``
+export const LogoContainer = styled.div`
+  img {
+    width: 500px;
+    object-fit: cover;
+  }
+  @media (max-width: 975px) {
+    img {
+      width: 275px;
+    }
+  }
+`
 export const FormContainer = styled.form`
   display: flex;
   flex-direction: column;
   gap: 16px;
-  width: 350px;
+  min-width: 350px;
   > input {
     background-color: lightgray;
     padding: 16px;
@@ -29,5 +44,4 @@ export const FormContainer = styled.form`
     border: none;
     border-radius: 10px;
   }
-  /* background-color: red; */
 `
