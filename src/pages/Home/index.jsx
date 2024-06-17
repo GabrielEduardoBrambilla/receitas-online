@@ -115,25 +115,21 @@ export function Home() {
       </TitleWrapper>
 
       <CardWrapper>
-        {recipes && recipes.map(recipe => 
+        {recipes && recipes.map(recipe =>
           <DefaultModal key={recipe.id} buttonChild={<RecipeCard title={recipe.name} desc={recipe.desc} />} buttonText="Receita Modal" >
-            <RecipeModal 
+            <RecipeModal
               title={recipe.name}
               desc={recipe.desc}
               howto={recipe.howto}
               categories={recipe.categories}
-              ingredients={recipe.ingredients}  
+              ingredients={recipe.ingredients}
             />
           </DefaultModal>
         )}
-        {/* <DefaultModal buttonChild={<RecipeCard />} buttonText="Receita Modal" >
-          <RecipeModal />
-        </DefaultModal>
-        <RecipeCard onClick={() => {
-          navigate('/modal')
-        }} /> */}
       </CardWrapper>
     </main>
-    <footer></footer>
+    <footer>
+      Receitas da Vovó
+    </footer>
   </Container>
 }

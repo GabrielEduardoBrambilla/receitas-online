@@ -9,13 +9,19 @@ export const Container = styled.div`
   background-color: #d9d9d9;
   max-height: 100px;
 
-  padding: 0px 10px 0px 80px;
+  padding: 0px 3.125rem;
+  @media (max-width: 1150px) {
+    /* padding: 0px 10px 0px 3.125rem; */
+  }
 `
 export const LogoContainer = styled.div`
   > img {
-    width: 50px;
-    height: 50px;
+    width: 80px;
+    height: 80px;
     object-fit: cover;
+  }
+  @media (max-width: 500px) {
+    display: none;
   }
 `
 export const SearchForm = styled.form`
@@ -41,12 +47,20 @@ export const SearchForm = styled.form`
 export const UserWrapper = styled.div`
   display: flex;
   gap: 16px;
-  align-items: center;
+  align-items: end;
   padding: 8px;
   border-radius: 6px;
 
   > p {
     font-size: 28px;
-    font-weight: 500;
+    font-weight: 400;
+    padding: 5px 0;
+    @media (max-width: 500px) {
+      display: none;
+    }
+  }
+  > svg {
+    font-size: 60px;
+    color: #5aa024;
   }
 `

@@ -32,7 +32,7 @@ export function Navbar(nome) {
         navigate('/Login')
       }}>
         <p>{nome.nome}</p>
-        <UserCircle size={40} weight="fill" />
+        <UserCircle weight="fill" />
 
       </UserWrapper>
 

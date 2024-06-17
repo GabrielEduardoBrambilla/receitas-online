@@ -24,7 +24,6 @@ export const NewModal = styled(Modal)`
   }
 `
 export const Container = styled.label`
-  display: flex;
   cursor: pointer;
 
   > button {
