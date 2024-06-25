@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from 'react'
 import { InputWrapper, Row, SaveButton, SimpleInput, TagWrapper } from './styles'
-import { DefaultModal } from '../DefaultModal'
 import { InputForm } from '../InputForm'
 import { TextAreaForm } from '../TextAreaForm'
 import { SelectForm } from '../SelectForm'
@@ -14,11 +13,11 @@ export function RecipeRegisterModal({ buttonText }) {
     const savedData = JSON.parse(localStorage.getItem('@ReceitaOnline:recipesData')) ?? [];
     const postData = {
       id: uuidv4(),
-      name:document.getElementById('recipeName').value,
-      categories:document.getElementById('categories').value,
-      ingredients:document.getElementById('ingredients').value,
-      desc:document.getElementById('desc').value,
-      howto:document.getElementById('howto').value,
+      name: document.getElementById('recipeName').value,
+      categories: document.getElementById('categories').value,
+      ingredients: document.getElementById('ingredients').value,
+      desc: document.getElementById('desc').value,
+      howto: document.getElementById('howto').value,
     }
     savedData.push(postData);
     localStorage.setItem("@ReceitaOnline:recipesData", JSON.stringify(savedData));
@@ -27,14 +26,14 @@ export function RecipeRegisterModal({ buttonText }) {
 
   const saveIngredient = () => {
     const savedData = JSON.parse(localStorage.getItem('@ReceitaOnline:ingredientsData')) ?? [];
-    
+
     const nameElement = document.getElementById('ingredientName');
     const caloriesElement = document.getElementById('ingredientCalorie');
-    
+
     const postData = {
       id: uuidv4(),
-      name:nameElement.value,
-      calories:caloriesElement.value,
+      name: nameElement.value,
+      calories: caloriesElement.value,
     }
 
     savedData.push(postData);
@@ -72,6 +71,12 @@ export function RecipeRegisterModal({ buttonText }) {
         <SimpleInput id="ingredientCalorie" type="text" name='IngredientCalorie' placeholder="Calorias" />
         <button type="button" onClick={saveIngredient}>Registrar Ingredientes</button>
       </InputWrapper>
+
+      {ingredients.map(ingredient => {
+        <TagWrapper key={ingredient}>
+          <p> {ingredient}</p> <span>X</span>
+        </TagWrapper>
+      })}
       <TagWrapper>
         <p> Feijão</p> <span>X</span>
       </TagWrapper>

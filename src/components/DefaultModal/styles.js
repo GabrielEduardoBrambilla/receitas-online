@@ -21,6 +21,7 @@ export const NewModal = styled(Modal)`
     top: 5px;
     right: 15px;
     font-size: 40px;
+    /* cursor: pointer; */
   }
 `
 export const Container = styled.label`
@@ -33,6 +34,7 @@ export const Container = styled.label`
     background-color: #85bb5d;
     border: none;
     font-weight: bold;
+    cursor: pointer;
     color: white;
   }
 `

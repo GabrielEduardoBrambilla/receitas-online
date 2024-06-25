@@ -3,7 +3,8 @@ import { Container } from './styles'
 import { DefaultModal } from '../DefaultModal'
 
 
-export function RecipeModal({ forceOpen, buttonText, title, desc, howto, ingredients, categories }) {
+export function RecipeModal({ title, desc, howto, ingredients, categories }) {
+  console.log(ingredients)
   return <Container>
     <header>{title ?? "Pão de Queijo Fit Facíl"}</header>
     <article>
