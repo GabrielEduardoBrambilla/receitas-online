@@ -11,11 +11,14 @@ export function RecipeRegisterModal({ buttonText }) {
   const submitHandler = e => {
     e.preventDefault();
     const savedData = JSON.parse(localStorage.getItem('@ReceitaOnline:recipesData')) ?? [];
+
+    const selectedIngredients = Array.from(document.getElementById('ingredients[]').selectedOptions).map(option => option.value);
+
     const postData = {
       id: uuidv4(),
       name: document.getElementById('recipeName').value,
       categories: document.getElementById('categories').value,
-      ingredients: document.getElementById('ingredients').value,
+      ingredients: selectedIngredients,
       desc: document.getElementById('desc').value,
       howto: document.getElementById('howto').value,
     }
@@ -63,8 +66,8 @@ export function RecipeRegisterModal({ buttonText }) {
       />
     </Row>
     <Row>
-      <SelectForm name="ingredients" displayName="Ingredientes"
-        options={ingredients}
+      <SelectForm name="ingredients[]" displayName="Ingredientes"
+        options={ingredients} multiple={true}
       />
       <InputWrapper>
         <SimpleInput id="ingredientName" type="text" name='IngredientName' placeholder="Nome" />

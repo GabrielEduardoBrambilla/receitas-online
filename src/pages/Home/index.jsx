@@ -99,7 +99,7 @@ export function Home() {
 
 
   useEffect(() => {
-    const recipesData = JSON.parse(localStorage.getItem('@ReceitaOnline:recipesData'));
+    const recipesData = JSON.parse(localStorage.getItem('@ReceitaOnline:recipesData')) ?? [];
     setRecipes((prevRecipes) => {
       return [...prevRecipes, ...recipesData];
     });
